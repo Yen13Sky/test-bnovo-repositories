@@ -1,0 +1,388 @@
+/*Шрифт по умолчанию*/
+$fontFamily: "gilroy-regular", sans-serif;
+$fontSize: 16px;
+
+/*--------------------*/
+/*Иконочные шрифты*/
+
+/*--------------------*/
+/*ПЕРЕМЕННЫЕ*/
+$maxWidth: 1900px;
+$maxHeight: 1080px;
+$maxWidthContainer: 1200px;
+$fontColor: #1f2328;
+$background: #ffffff;
+$grey: #59636e;
+$lightGrey: #f6f8fa;
+$green: #1f883d;
+$red: #FF0000;
+$yellow: #FABC3F;
+
+$md1: $maxWidthContainer;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+$md5: 1200;
+
+/*--------------------*/
+/*Подключение файлов стилей*/
+@import "icons";
+@import 'fonts';
+@import "resetCSS";
+
+
+/*--------------------*/
+
+/*ОСНОВНАЯ СЕТКА*/
+body {
+  position: relative;
+  font-family: $fontFamily;
+  color: $fontColor;
+  font-size: $fontSize;
+  background: $lightGrey;
+  padding: 0;
+
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &._loaded {
+  }
+
+}
+
+footer {
+  margin: 0 0 auto;
+}
+
+/*--------------------*/
+/*ОСНОВНАЯ СЕТКА*/
+.container {
+  position: relative;
+  max-width: $maxWidthContainer;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+/*--------------------*/
+.home {
+  &__wrapper {
+    background: $background;
+    height: auto;
+  }
+
+  &__items {
+    width: 100%;
+  }
+}
+
+.home-item {
+  &__row {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+}
+
+.search {
+  margin: 38px 0 28px 0;
+
+}
+
+.form-control {
+  &__row {
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-evenly;
+
+  }
+
+  &__input-row {
+    position: relative;
+    flex: 0 1 50%;
+  }
+
+  &__input {
+    padding: 6px 12px;
+    width: 100%;
+    border: 1px solid $grey;
+    color: $fontColor;
+    line-height: 120%;
+
+    &:focus {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 22px;
+    color: $grey;
+    transform: translate(-50%, -50%);
+  }
+
+  &__btn {
+    padding: 6px 12px;
+    border: 1px solid $grey;
+    color: $fontColor;
+    line-height: 120%;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    }
+  }
+}
+
+.form-control-btn-copy {
+  border: 1px solid $green;
+  color: $green;
+}
+
+.result {
+  width: 100%;
+
+  &__wrapper {
+  }
+
+  &__row {
+    position: relative;
+  }
+
+  &__title {
+    font-size: 26px;
+    line-height: 150%;
+    font-weight: 500;
+    color: $fontColor;
+
+  }
+
+  &__progress {
+
+    progress {
+      position: fixed;
+      width: calc(100% - 40px);
+      max-width: 100%;
+      top: 0;
+      left: 20px;
+      right: 20px;
+      margin: 2px 0 0 0;
+
+
+    }
+
+    progress::-moz-progress-bar {
+      border: none;
+      background-color: $grey;
+      border-radius: 16px;
+    }
+
+    progress::-webkit-progress-bar {
+      border: none;
+      background-color: $grey;
+      border-radius: 16px;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: $green;
+      border-radius: 16px;
+    }
+  }
+
+}
+
+.result-list {
+  &__item {
+    margin: 32px 0 0 0;
+  }
+
+}
+
+.list-item {
+  &__header {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    padding: 4px 8px;
+    text-transform: uppercase;
+    line-height: 120%;
+    color: $fontColor;
+    border: 1px solid $grey;
+    letter-spacing: 0.05em;
+    font-size: 14px;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    }
+  }
+}
+
+.item-header {
+  &__img {
+    max-width: 50px;
+    border-radius: 50%;
+    margin: 0 12px 0 0;
+  }
+
+  &__title {
+    font-size: 22px;
+    line-height: 150%;
+    color: $fontColor;
+  }
+
+  &__delete {
+    color: $red;
+    line-height: 150%;
+    margin: 0 0 0 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+}
+
+.item-bottom {
+  display: flex;
+  align-items: center;
+  margin: 22px 0 14px 0;
+
+  &__stars {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: $yellow;
+    margin: 0 14px 0 0;
+
+    p {
+      font-size: $fontSize;
+      margin-left: 4px;
+      color: $fontColor;
+    }
+
+  }
+
+  &__fork {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: $grey;
+    margin: 0 14px 0 0;
+
+    p {
+      font-size: $fontSize;
+      margin-left: 4px;
+      color: $fontColor;
+    }
+
+  }
+
+  &__like {
+
+    font-size: 18px;
+    color: $fontColor;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      color: $red;
+    }
+  }
+
+}
+
+.favorites {
+  flex: 0 1 50%;
+
+  &__title {
+    font-size: 26px;
+    color: $fontColor;
+    line-height: 150%;
+    font-weight: 500;
+    margin: 0 0 32px 0;
+
+  }
+
+  &__content {
+    position: relative;
+    margin: 0 0 55px 0;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      background-color: $grey;
+    }
+  }
+}
+
+.repository-item {
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin: 0 0 18px 0;
+  }
+
+  &__name {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    line-height: 150%;
+    color: $fontColor;
+    margin: 0 22px 0 0;
+  }
+
+  &__img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+
+  }
+
+  &__title {
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: 500;
+    margin: 0 12px 0 0;
+
+  }
+
+  &__link {
+    text-transform: uppercase;
+    line-height: 150%;
+    padding: 6px 12px;
+    border: 1px solid $green;
+    color: $green;
+
+    &:hover {
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+
+    &:not(:last-child) {
+      margin: 0 12px 0 0;
+    }
+  }
+}
