@@ -162,11 +162,9 @@ footer {
 .result {
   width: 100%;
 
-  &__wrapper {
-  }
-
   &__row {
     position: relative;
+    margin: 0 0 32px 0;
   }
 
   &__title {
@@ -187,14 +185,14 @@ footer {
       left: 20px;
       right: 20px;
       margin: 2px 0 0 0;
-
-
+      z-index: 10;
     }
 
     progress::-moz-progress-bar {
       border: none;
       background-color: $grey;
       border-radius: 16px;
+
     }
 
     progress::-webkit-progress-bar {
@@ -208,14 +206,12 @@ footer {
       border-radius: 16px;
     }
   }
-
 }
 
 .result-list {
   &__item {
     margin: 32px 0 0 0;
   }
-
 }
 
 .list-item {
